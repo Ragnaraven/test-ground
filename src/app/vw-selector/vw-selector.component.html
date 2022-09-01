@@ -1,0 +1,50 @@
+<div class="selectorContainer flexCol">
+    <app-vegan-witches #CUSTOM [option]="this.options[t.value]" [option2]="this.options[b.value]"></app-vegan-witches>
+    <div class="top flexRow">
+        <mat-form-field appearance="fill" style="width: 40ch">
+            <mat-label>Top Font</mat-label>
+            <mat-select [formControl]="t" (valueChange)="updateFont(true, t.value)" disableOptionCentering>
+                <mat-option *ngFor="let font of options; let index = index" [value]="index">{{index + 1}}: {{ font }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-slider
+            [formControl]="ts"
+            class="flexGrow"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            step="1"
+            min="1"
+            max="140"
+            aria-label="units" 
+            (input)="updateSize(true, $event.value)">
+        </mat-slider>
+    </div>
+
+    <div class="bottom flexRow alignItemsCenter">
+        <mat-form-field appearance="fill" style="width: 40ch">
+            <mat-label>Bottom Font</mat-label>
+            <mat-select [formControl]="b" (valueChange)="updateFont(false, b.value)" disableOptionCentering>
+                <mat-option *ngFor="let font of options; let index = index" [value]="index">{{index + 1}}: {{ font }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-slider
+            [formControl]="bs"
+            class="flexGrow"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            step="1"
+            min="1"
+            max="140"
+            aria-label="units"
+            (input)="updateSize(false, $event.value)">
+        </mat-slider>
+    </div>
+
+    <div class="flexRow flexGrow justifyContentEnd">
+        <button mat-fab-button color="primary" (click)="remove.emit()"><mat-icon>remove</mat-icon></button>
+    </div>
+</div>

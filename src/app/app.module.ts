@@ -5,14 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VeganWitchesComponent } from './vegan-witches/vegan-witches.component';
 
+import { MaterialModule } from './material/material.module';
+import { VwSelectorComponent } from './vw-selector/vw-selector.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    VeganWitchesComponent
+    VeganWitchesComponent,
+    VwSelectorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule,
+
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

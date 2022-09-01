@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.cdk-global-overlay-wrapper, .cdk-overlay-container {
+    z-index: 99999 !important;
+ }
+
 .flexRow {
     display: flex;
     flex-direction: row;    
@@ -32,4 +42,10 @@
 
 .flexGrow {
     flex: 1;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.width100 {
+    width: 100%;
 }

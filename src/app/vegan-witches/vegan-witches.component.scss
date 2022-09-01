@@ -143,8 +143,8 @@
 @font-face { font-family: GorgeousPixel_Font; src: url(/assets/font/GorgeousPixel.ttf) format("truetype"); }
 
 .container {
-
-    margin-bottom: 2rem;
+    border: 1px solid black;
+    padding: 1rem 0rem;
    
     .eq {
         font-size: 1rem;
@@ -155,6 +155,10 @@
     }
 
     .option {
-        margin-left: 3rem;
+        width: 100%;
+        margin-bottom: 2rem;
+        font-size: 10px;
+        text-align: right;
+        margin-right: 1rem;
     }        
 }

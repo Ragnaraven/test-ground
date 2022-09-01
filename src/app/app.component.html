@@ -1,4 +1,4 @@
-<!--p *ngFor="let option of optionss">{{ process(option).output }}</p>-->
+<!--p *ngFor="let option of optionss">{{ process(option).output }}</p>
 
 <app-vegan-witches option="FT88-Gothique_Font" option2="Avalancheno__Font"></app-vegan-witches>
 <app-vegan-witches option="Avalancheno__Font" option2="BBB_Simulator_Outline_Font"></app-vegan-witches>
@@ -10,3 +10,24 @@
 <br/>
 
 <app-vegan-witches *ngFor="let option of options" [option]="option" [option2]="option"></app-vegan-witches>
+-->
+
+<div class="pageContainer flexRow">
+    <div class="left flexGrow">
+        <app-vegan-witches *ngFor="let option of options" [option]="option" [option2]="option"></app-vegan-witches>
+    </div>
+    <div class="right flexGrow">
+        <app-vw-selector
+            *ngFor="let custom of customs.controls; let i = index" 
+            [options]="options"
+            [t]="getControl(i, 't')" 
+            [ts]="getControl(i, 'ts')" 
+            [b]="getControl(i, 'b')" 
+            [bs]="getControl(i, 'bs')" 
+            (remove)="remove(i)"
+        > </app-vw-selector>
+        <div class="containerAdd">
+            <button mat-fab-button color="primary" (click)="addNewVW()"><mat-icon>add</mat-icon></button>
+        </div>
+    </div>
+</div>

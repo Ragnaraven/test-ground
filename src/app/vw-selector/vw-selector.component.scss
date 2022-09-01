@@ -1,0 +1,9 @@
+.selectorContainer {    
+    border: 1px solid black;
+
+    app-vegan-witches {
+        .container {
+            border: none !important;
+        }            
+    }
+}

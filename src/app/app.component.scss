@@ -1,0 +1,22 @@
+.pageContainer {
+    height: 100vh;
+
+    .left {
+        overflow-y: auto;
+
+    }
+
+    .right {
+        box-sizing: border-box;
+        padding: 1rem;
+        background-color: #333;
+        color: white;
+
+        .top {
+        }
+
+        .bottom {
+
+        }
+    }
+}
