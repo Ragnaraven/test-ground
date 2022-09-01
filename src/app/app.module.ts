@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { VeganWitchesComponent } from './vegan-witches/vegan-witches.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VeganWitchesComponent
   ],
   imports: [
     BrowserModule,

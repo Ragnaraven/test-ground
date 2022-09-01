@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+.flexRow {
+    display: flex;
+    flex-direction: row;    
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.alignItemsCenter {
+    align-items: center;
+}
+
+.alignItemsEnd {
+    align-items: end;
+}
+
+.justifyContentCenter {
+    justify-content: center;
+}
+
+.justifyContentEnd {
+    justify-content: end;
+}
+
+.flexGrow {
+    flex: 1;
+}
