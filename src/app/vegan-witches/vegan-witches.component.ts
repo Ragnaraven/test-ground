@@ -9,15 +9,19 @@ export class VeganWitchesComponent implements AfterViewInit {
 
   @Input() option: string = 'Sans';
   @Input() option2: string = 'Sans';
+  @Input() optionSize: string = '12px';
+  @Input() option2Size: string = '24px';
 
   @ViewChild("EQ") eq: ElementRef | undefined;
   @ViewChild("VW") vw: ElementRef | undefined;
 
   constructor() {    }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit(): void {    
     this.setUpper(this.option);
     this.setLower(this.option2);
+    this.setSizeUpper(this.optionSize);
+    this.setSizeLower(this.option2Size);
   }
 
   setUpper(font: string) {
@@ -38,7 +42,8 @@ export class VeganWitchesComponent implements AfterViewInit {
 
   }
 
-  setSizeUpper(size: string) {    
+  setSizeUpper(size: string) {   
+    this.optionSize = size; 
     if(this.eq?.nativeElement.style)
       this.eq!.nativeElement.style.fontSize  = size;
     else 
@@ -46,6 +51,7 @@ export class VeganWitchesComponent implements AfterViewInit {
   }
 
   setSizeLower(size: string) {
+    this.option2Size = size; 
     if(this.vw?.nativeElement.style)
       this.vw!.nativeElement.style.fontSize  = size;
     else 

@@ -29,7 +29,8 @@ export class VwSelectorComponent {
 
   constructor() { 
   }
-  updateFont(top: boolean, value: number)
+  
+  updateFont(top: boolean, value: any)
   {
     if(top)
       this.VWC.setUpper(this.options[value]);

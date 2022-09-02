@@ -1,10 +1,10 @@
 <div class="selectorContainer flexCol">
-    <app-vegan-witches #CUSTOM [option]="this.options[t.value]" [option2]="this.options[b.value]"></app-vegan-witches>
+    <app-vegan-witches #CUSTOM [option]="this.options[t.value]" [option2]="this.options[b.value]" [optionSize]="ts.value + 'px'" [option2Size]="bs.value + 'px'" ></app-vegan-witches>
     <div class="top flexRow">
         <mat-form-field appearance="fill" style="width: 40ch">
             <mat-label>Top Font</mat-label>
-            <mat-select [formControl]="t" (valueChange)="updateFont(true, t.value)" disableOptionCentering>
-                <mat-option *ngFor="let font of options; let index = index" [value]="index">{{index + 1}}: {{ font }}</mat-option>
+            <mat-select [formControl]="t" (valueChange)="updateFont(true, $event)" disableOptionCentering>
+                <mat-option *ngFor="let font of options; let index = index" [value]="index">{{index + 0}}: {{ font }}</mat-option>
             </mat-select>
         </mat-form-field>
 
@@ -21,12 +21,11 @@
             (input)="updateSize(true, $event.value)">
         </mat-slider>
     </div>
-
     <div class="bottom flexRow alignItemsCenter">
         <mat-form-field appearance="fill" style="width: 40ch">
             <mat-label>Bottom Font</mat-label>
-            <mat-select [formControl]="b" (valueChange)="updateFont(false, b.value)" disableOptionCentering>
-                <mat-option *ngFor="let font of options; let index = index" [value]="index">{{index + 1}}: {{ font }}</mat-option>
+            <mat-select [formControl]="b" (valueChange)="updateFont(false, $event)" disableOptionCentering>
+                <mat-option *ngFor="let font of options; let index = index" [value]="index">{{index + 0}}: {{ font }}</mat-option>
             </mat-select>
         </mat-form-field>
 

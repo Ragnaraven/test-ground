@@ -107,25 +107,25 @@ export class AppComponent {
     this.customs = this.fb.array([]);  
 
     let sub = this.route.queryParams.subscribe((params : any) => {
-      let customs = this.route.snapshot.queryParamMap.get('customs');
-      console.log(customs)
+      let customsParms = this.route.snapshot.queryParamMap.get('customs');
+      console.log(customsParms)
   
-      if(customs != undefined){
-        let arr = customs.substring(0, customs.length - 1).split(":");
-  
+      if(customsParms != undefined){
+        let arr = customsParms.substring(0, customsParms.length - 1).split(":");
         for(let i = 0; i < arr.length; i += 4)
         {
           this.addVW({
-            t:  Number.parseInt(arr[i]),
-            ts: Number.parseInt(arr[i+1]),
-            b:  Number.parseInt(arr[i+2]),
-            bs: Number.parseInt(arr[i+3])
+            t:  Number.parseInt(arr[i]  .substring(arr[i]  .indexOf('t')  + 1)),
+            ts: Number.parseInt(arr[i+1].substring(arr[i+1].indexOf('ts') + 2)),
+            b:  Number.parseInt(arr[i+2].substring(arr[i+2].indexOf('b')  + 1)),
+            bs: Number.parseInt(arr[i+3].substring(arr[i+3].indexOf('bs') + 2))
           });
         }
       }
   
       //SUB
       this.customs.valueChanges.subscribe((value: VWData[]) => {
+        console.log(value)
   
         let s = '';
         let i = 0;
@@ -150,7 +150,8 @@ export class AppComponent {
   
       });
 
-      sub.unsubscribe();  
+      if(customsParms != undefined)
+        sub.unsubscribe();  
     });
   }
 
